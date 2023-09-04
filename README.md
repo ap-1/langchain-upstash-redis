@@ -4,6 +4,8 @@ LangChain provides a simple interface to conduct conversations between a human a
 
 LangChain provides multiple integrations for Redis, including `ioredis`, `node-redis` and Upstash Redis. Because the Upstash Redis client works via REST, you can use it to create edge-ready applications that can be deployed to Vercel, Cloudflare Workers, or any other serverless environment. We will be using it to create a simple chat app with memory that persists across sessions.
 
+You can find the full source code for this demo [here](https://github.com/ap-1/langchain-upstash-redis).
+
 ## Prerequisites
 
 - [An Upstash Redis database](https://upstash.com/docs/redis/overall/getstarted)
