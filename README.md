@@ -35,7 +35,7 @@ While not strictly required, the Vercel AI SDK will make it easier to stream res
 
 ### Setting environment variables
 
-Finally, we'll need the following environment variables from the prerequisites earlier. Be sure to name them exactly as described here, because otherwise they won't be read them automatically! You can add these to a `.env` file in the root of your new project:
+Finally, we'll need the following environment variables from the prerequisites earlier. Be sure to name them exactly as described here, because otherwise they won't be read automatically! You can add these to a `.env` file in the root of your new project:
 
 ```bash
 UPSTASH_REDIS_REST_URL="https://********.upstash.io"
@@ -186,11 +186,9 @@ const chain = new ConversationChain({ llm: model, memory });
 
 We construct a new Redis client using the `Redis` class explorted from `@upstash/redis`. It conveniently provides a method to load environment variables automatically, which mirrors the behavior of `ChatOpenAI`. As long as you named your environment variables correctly, you won't need to pass any additional arguments either of these classes.
 
-In your app, you may want to use the user's ID or some other unique identifier for the `sessionId` to ensure that messages are not shared between users, but we'll use the current date for the sake of this demo. `UpstashRedisChatMessageHistory` provides more configuration options like `sessionTTL`, to set the lifetime of the cache.
+In your app, you may want to use the user's ID or some other unique identifier for the `sessionId` to ensure that messages are not shared between users, but we'll use the current date for the sake of this demo. `UpstashRedisChatMessageHistory` provides more configuration options like `sessionTTL` to set the lifetime of the cache.
 
-It is important to enable `streaming` on the model, as this will allow us to use our destructured `handlers` object from before to pipe the results of the chain to `stream`.
-
-Finally, we can call the chain, passing in the latest message and the `handlers` object:
+It is important to enable `streaming` on the model, as this will allow us to use our destructured `handlers` object from before to pipe the results of the chain to `stream`. Finally, we can call the chain, passing in the latest message and the `handlers` object:
 
 ```ts
 // snip
