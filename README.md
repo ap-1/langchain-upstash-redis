@@ -1,4 +1,4 @@
-# Retaining Chat History using LangChain and Upstash Redis
+# Retaining Chat History Using LangChain and Upstash Redis
 
 LangChain provides a simple interface to conduct conversations between a human and an AI. It can be easily configured to use `BufferMemory`, enabling you to store conversation history in memory. This may be satisfactory for some use cases, but your apps may also require long-term persistence of chat history. Fortunately, it is just as straightforward to swap this out for an Upstash Redis instance.
 
